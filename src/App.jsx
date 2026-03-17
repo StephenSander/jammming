@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Search from './Search.jsx';
+import Results from './Results.jsx';
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <>
       <h1>Jammming</h1>
       <Search />
+      <Results />
     </>
   )
 }
