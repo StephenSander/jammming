@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Search() {
+function Search(props) {
     const [input, setInput] = useState('');
 
     function handleChange({target}) {
@@ -9,14 +9,25 @@ function Search() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        alert('Submitting');
+
+        // This will eventually be where the Spotify API get request will go
+        const fakeResults = ['Song A', 'Song B'];
+        props.onSearch(fakeResults);
     };
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type='text' name={input} value={input} onChange={handleChange} placeholder='Search for a song here...' />
+            <input
+                type='text'
+                name='search'
+                value={input}
+                onChange={handleChange}
+                placeholder='Search for a song here...'
+            />
             <br />
-            <button type="submit">Search</button>
+            <button type="submit">
+                Search
+            </button>
         </form>
     );
 }

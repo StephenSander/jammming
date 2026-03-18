@@ -1,18 +1,19 @@
 import React, {useState} from 'react';
+import Track from './Track';
 
-function Results() {
-    const [results, setResults] = useState(['example1', 'example2', 'example3']);
+function Results(props) {
 
     return (
-        <>
-            {results.map((track, index) => (
-                <div key={index}>
-                    <h3>{track}</h3>
-                    <button>x</button>
-                </div>
-            ))}
-        </>
-    )
+    <>
+      {props.tracks.map((track, i) => (
+        <Track
+            key={i}
+            track={track}
+            onAdd={props.onAdd}
+        />
+      ))}
+    </>
+  );
 };
 
 export default Results;
