@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import './App.css'
 import Search from './Search.jsx';
-import Results from './Results.jsx';
+import SearchResults from './SearchResults.jsx';
+import Tracklist from './Tracklist.jsx';
+import Track from './Track.jsx';
 
 function App() {
   const [results, setResults] = useState([]);
@@ -15,9 +17,19 @@ function App() {
     <>
       <h1>Jammming</h1>
       <Search onSearch={setResults} />
-      <Results tracks={results} onAdd={addTrack} />
+      <SearchResults tracks={results} onAdd={addTrack} />
     </>
   )
 }
 
 export default App
+
+/*
+App
+  SearchResults
+    Tracklist
+      Track
+  Playlist
+    Tracklist
+      Track
+*/
