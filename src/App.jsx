@@ -10,7 +10,7 @@ function App() {
 
   function addTrack(track) {
   setPlaylist(prev => {
-    if (prev.some(t => t.id === track. id)) {
+    if (prev.some(t => t.id === track.id)) {
         return prev;
       }
       return [...prev, track];
@@ -18,9 +18,8 @@ function App() {
   }
 
   function removeTrack(track) {
-    setPlaylist(prev => {
-      
-    })
+    setPlaylist(prev => prev.filter(t => t.id !== track.id)
+    );
   }
 
   return (
@@ -42,13 +41,3 @@ function App() {
 }
 
 export default App
-
-/*
-App
-  SearchResults
-    Tracklist
-      Track
-  Playlist
-    Tracklist
-      Track
-*/

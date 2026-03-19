@@ -1,6 +1,8 @@
 import React from 'react';
 
 function Track(props) {
+  console.log(props.track);
+
   return (
     <div>
       <p>{props.track.name}</p>

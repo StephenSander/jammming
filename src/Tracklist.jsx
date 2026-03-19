@@ -5,7 +5,7 @@ function Tracklist(props) {
 
   return (
     <>
-      {props.tracks.map(track => (
+      {props.tracks?.map(track => (
         <Track
           key={track.id}
           track={track}

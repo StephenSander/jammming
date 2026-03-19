@@ -11,7 +11,10 @@ function Search(props) {
         e.preventDefault();
 
         // This will eventually be where the Spotify API get request will go
-        const fakeResults = ['Song A', 'Song B'];
+        const fakeResults = [
+            {id: 1, name: 'Song A'},
+            {id: 2, name: 'Song B'}
+        ];
         props.onSearch(fakeResults);
     };
 

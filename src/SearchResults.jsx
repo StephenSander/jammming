@@ -5,7 +5,7 @@ function SearchResults(props) {
     return (
         <Tracklist
           tracks={props.tracks}
-          onAdd={props.onAdd}
+          onAction={props.onAdd}
           isRemoval={false}
         />
     );
