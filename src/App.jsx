@@ -4,6 +4,7 @@ import Search from './Search.jsx';
 import SearchResults from './SearchResults.jsx';
 import Tracklist from './Tracklist.jsx';
 import Track from './Track.jsx';
+import Playlist from './Playlist.jsx';
 
 function App() {
   const [results, setResults] = useState([]);
@@ -11,6 +12,14 @@ function App() {
 
   function addTrack(track) {
     setPlaylist(prev => [...prev, track]);
+
+    for (let x; x < playlist.length; x++) {
+      for (let y; y < playlist.length; y++) {
+        if (x == y) {
+          playlist.splice(y, 1);
+        }
+      }
+    }
   }
 
   return (
@@ -18,6 +27,7 @@ function App() {
       <h1>Jammming</h1>
       <Search onSearch={setResults} />
       <SearchResults tracks={results} onAdd={addTrack} />
+      <Playlist playlist={playlist} />
     </>
   )
 }

@@ -4,7 +4,15 @@ import Track from './Track';
 function Tracklist(props) {
 
   return (
-    <Track />
+    <>
+      {props.tracks.map((track, i) => (
+          <Track
+              key={i}
+              track={track}
+              onAdd={props.onAdd}
+          />
+      ))}
+    </>
   );
 };
 
