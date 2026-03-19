@@ -3,8 +3,11 @@ import React from 'react';
 function Track(props) {
   return (
     <div>
-      <p>{props.track}</p>
-      <button onClick={() => props.onAdd(props.track)}>+</button>
+      <p>{props.track.name}</p>
+
+      <button onClick={() => props.onAction(props.track)}>
+        {props.isRemoval ? "-" : "+"}
+      </button>
     </div>
   );
 }

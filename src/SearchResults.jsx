@@ -3,7 +3,11 @@ import Tracklist from "./Tracklist";
 
 function SearchResults(props) {
     return (
-        <Tracklist tracks={props.tracks} onAdd={props.onAdd} />
+        <Tracklist
+          tracks={props.tracks}
+          onAdd={props.onAdd}
+          isRemoval={false}
+        />
     );
 };
 

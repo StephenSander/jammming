@@ -5,12 +5,13 @@ function Tracklist(props) {
 
   return (
     <>
-      {props.tracks.map((track, i) => (
-          <Track
-              key={i}
-              track={track}
-              onAdd={props.onAdd}
-          />
+      {props.tracks.map(track => (
+        <Track
+          key={track.id}
+          track={track}
+          onAction={props.onAction}
+          isRemoval={props.isRemoval}
+        />
       ))}
     </>
   );

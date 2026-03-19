@@ -2,8 +2,6 @@ import { useState } from 'react'
 import './App.css'
 import Search from './Search.jsx';
 import SearchResults from './SearchResults.jsx';
-import Tracklist from './Tracklist.jsx';
-import Track from './Track.jsx';
 import Playlist from './Playlist.jsx';
 
 function App() {
@@ -11,23 +9,34 @@ function App() {
   const [playlist, setPlaylist] = useState([]);
 
   function addTrack(track) {
-    setPlaylist(prev => [...prev, track]);
-
-    for (let x; x < playlist.length; x++) {
-      for (let y; y < playlist.length; y++) {
-        if (x == y) {
-          playlist.splice(y, 1);
-        }
+  setPlaylist(prev => {
+    if (prev.some(t => t.id === track. id)) {
+        return prev;
       }
-    }
+      return [...prev, track];
+    });
+  }
+
+  function removeTrack(track) {
+    setPlaylist(prev => {
+      
+    })
   }
 
   return (
     <>
       <h1>Jammming</h1>
       <Search onSearch={setResults} />
-      <SearchResults tracks={results} onAdd={addTrack} />
-      <Playlist playlist={playlist} />
+
+      <SearchResults 
+        tracks={results}
+        onAdd={addTrack}
+      />
+
+      <Playlist
+        playlist={playlist}
+        onRemove={removeTrack}
+      />
     </>
   )
 }

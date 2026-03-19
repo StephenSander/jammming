@@ -1,12 +1,14 @@
 import React from "react";
-import Track from "./Track";
+import Tracklist from "./Tracklist";
 
 export default function Playlist(props) {
     return (
         <>
-            {props.playlist.map((song, i)=> (
-                <p>Nothing yet</p>
-            ))}
+          <Tracklist
+            tracks={props.plalist}
+            onAction={props.onRemove}
+            isRemoval={true}
+          />
         </>
     );
 };
